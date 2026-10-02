@@ -1,0 +1,110 @@
+{
+  "version": "1.0",
+  "appId": "d8d6083b-d1b1-4068-a36f-bd6f476e988c",
+  "appDisplayName": "CAR-Event Planner Manager",
+  "region": "prod",
+  "environmentId": "1ea34120-1686-ecb4-bbf6-1e437e83600d",
+  "description": " ",
+  "buildPath": "./dist",
+  "buildEntryPoint": "index.html",
+  "localAppUrl": "http://localhost:3000",
+  "logoPath": "Default",
+  "connectionReferences": {
+    "ff817934-d160-4c9b-aaa1-dbf0750012cc": {
+      "id": "/providers/Microsoft.PowerApps/apis/shared_teams",
+      "displayName": "Microsoft Teams",
+      "dataSources": [
+        "teams"
+      ],
+      "dataSets": {}
+    },
+    "9060cda2-4a0c-4797-8674-d47f20aa7eff": {
+      "id": "/providers/Microsoft.PowerApps/apis/shared_office365users",
+      "displayName": "Office 365 Users",
+      "dataSources": [
+        "office365users"
+      ],
+      "dataSets": {}
+    }
+  },
+  "databaseReferences": {
+    "default.cds": {
+      "dataSources": {
+        "epm_events": {
+          "entitySetName": "new_epm_events",
+          "logicalName": "new_epm_event",
+          "isHidden": false
+        },
+        "epm_eventtasks": {
+          "entitySetName": "new_epm_eventtasks",
+          "logicalName": "new_epm_eventtask"
+        },
+        "epm_eventtemplates": {
+          "entitySetName": "new_epm_eventtemplates",
+          "logicalName": "new_epm_eventtemplate"
+        },
+        "epm_expenses": {
+          "entitySetName": "new_epm_expenses",
+          "logicalName": "new_epm_expense",
+          "isHidden": false
+        },
+        "epm_meetings": {
+          "entitySetName": "new_epm_meetings",
+          "logicalName": "new_epm_meeting",
+          "isHidden": false
+        },
+        "epm_meetingattendees": {
+          "entitySetName": "new_epm_meetingattendees",
+          "logicalName": "new_epm_meetingattendee",
+          "isHidden": false
+        },
+        "epm_taskcomments": {
+          "entitySetName": "new_epm_taskcomments",
+          "logicalName": "new_epm_taskcomment",
+          "isHidden": false
+        },
+        "epm_taskhistories": {
+          "entitySetName": "new_epm_taskhistories",
+          "logicalName": "new_epm_taskhistory",
+          "isHidden": false
+        },
+        "epm_templatetasks": {
+          "entitySetName": "new_epm_templatetasks",
+          "logicalName": "new_epm_templatetask",
+          "isHidden": false
+        },
+        "notes": {
+          "entitySetName": "annotations",
+          "logicalName": "annotation",
+          "isHidden": false
+        },
+        "users": {
+          "entitySetName": "systemusers",
+          "logicalName": "systemuser",
+          "isHidden": false
+        },
+        "securityroles": {
+          "entitySetName": "roles",
+          "logicalName": "role",
+          "isHidden": false
+        },
+        "systemuserroles": {
+          "entitySetName": "systemuserrolescollection",
+          "logicalName": "systemuserroles",
+          "isHidden": false
+        },
+        "environment_39a902ba": {
+          "entitySetName": "Environment",
+          "logicalName": "environment_39a902ba",
+          "isHidden": false
+        },
+        "currencies": {
+          "entitySetName": "transactioncurrencies",
+          "logicalName": "transactioncurrency",
+          "isHidden": false
+        }
+      },
+      "environmentVariableName": ""
+    }
+  }
+}

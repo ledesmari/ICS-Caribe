@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* Brand */
+  --color-orange-50: #FFF1E3;
+  --color-orange-300: #FFC48A;
+  --color-orange-500: #FF8303;
+  --color-orange-700: #B85C00;
+  --color-orange-900: #7A3E00;
+  --color-navy-50: #EEF3FA;
+  --color-navy-100: #E3ECF7;
+  --color-navy-300: #8FB0D6;
+  --color-navy-700: #0D3C72;
+  --color-navy-900: #0A2E57;
+  --color-green-50: #DCF5E5;
+  --color-green-300: #86D3A3;
+  --color-green-600: #15803D;
+  --color-green-700: #136C34;
+  --color-red-50: #FDE8E7;
+  --color-red-600: #D92D20;
+  --color-red-700: #B42318;
+
+  /* Sidebar: dark navy shell that floats above the light page */
+  --color-sidebar: #0B2545;
+  --color-sidebar-hover: #13365D;
+  --color-sidebar-active: #1B4A7E;
+  --color-sidebar-line: #1D3B5E;
+  --color-sidebar-text: #E9F0F8;
+  --color-sidebar-muted: #92AAC6;
+
+  /* Template palette (Calendar): -bg = chip fill, base = dot/bar/pill with white text, -text = text on -bg */
+  --color-tpl-teal-bg: #D5F2EE;    --color-tpl-teal: #0F766E;    --color-tpl-teal-text: #0B5750;
+  --color-tpl-violet-bg: #EEE8FC;  --color-tpl-violet: #6D28D9;  --color-tpl-violet-text: #5B21B6;
+  --color-tpl-sky-bg: #DFF0FA;     --color-tpl-sky: #0369A1;     --color-tpl-sky-text: #075985;
+  --color-tpl-magenta-bg: #F7E3F9; --color-tpl-magenta: #A21CAF; --color-tpl-magenta-text: #86198F;
+  --color-tpl-olive-bg: #EEF2CF;   --color-tpl-olive: #5C6908;   --color-tpl-olive-text: #4F5A08;
+  --color-tpl-brown-bg: #F5E9DF;   --color-tpl-brown: #7C4A1E;   --color-tpl-brown-text: #5E3714;
+  --color-tpl-neutral-bg: #EEF1F5; --color-tpl-neutral: #52606D; --color-tpl-neutral-text: #3B4652;
+
+  /* Neutrals */
+  --color-ink: #111111;
+  --color-page: #F4F6FA;
+  --color-line: #E4E8EE;
+  --color-muted: #627186;
+  --color-secondary: #33445A;
+  --color-pending-bg: #EEF1F5;
+  --color-pending: #475569;
+
+  /* Soft, layered, navy-tinted elevation for KPI cards */
+  --shadow-kpi: 0 1px 2px rgb(13 60 114 / 0.04), 0 6px 16px -4px rgb(13 60 114 / 0.08), 0 18px 36px -12px rgb(13 60 114 / 0.16);
+  --shadow-kpi-hover: 0 1px 2px rgb(13 60 114 / 0.05), 0 10px 22px -6px rgb(13 60 114 / 0.12), 0 26px 48px -14px rgb(13 60 114 / 0.22);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-page font-sans text-ink antialiased;
+    min-height: 100dvh;
+  }
+
+  /* Numbers line up in KPIs, tables and progress labels. */
+  .tabular,
+  table,
+  [data-numeric] {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Visible focus ring on every interactive element. */
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 3px solid var(--color-navy-700);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /*
+   * Sidebar overrides.
+   * The focus ring, the skeleton fill and the ghost button are all tuned for a
+   * light page, so the dark panel re-declares them at a higher specificity
+   * rather than changing the shared components.
+   */
+  .sidebar-panel {
+    color: var(--color-sidebar-text);
+  }
+
+  .sidebar-panel :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline-color: var(--color-orange-300);
+  }
+
+  .sidebar-panel .sidebar-skeleton {
+    background-color: var(--color-sidebar-hover);
+  }
+
+  .sidebar-panel .sidebar-icon-btn,
+  .sidebar-panel .sidebar-icon-btn:hover {
+    background-color: transparent;
+    color: var(--color-sidebar-muted);
+  }
+
+  .sidebar-panel .sidebar-icon-btn:hover {
+    background-color: var(--color-sidebar-hover);
+    color: var(--color-sidebar-text);
+  }
+}
